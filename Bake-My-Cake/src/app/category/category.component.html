@@ -1,0 +1,15 @@
+<div id="category-div">
+  <mat-chip-listbox
+    [(ngModel)]="selectedCategory"
+    (ngModelChange)="onCategorySelected()"
+  >
+    <mat-chip-option class="option" color="accent" value="All" selected
+      >All</mat-chip-option
+    >
+    <mat-chip-option value="Cupcakes" class="option">Cupcakes</mat-chip-option>
+    <mat-chip-option value="Cakes" class="option">Cakes</mat-chip-option>
+    <mat-chip-option value="Brownies" class="option">Brownies</mat-chip-option>
+    <mat-chip-option value="Muffins" class="option">Muffins</mat-chip-option>
+    <mat-chip-option value="Bonbons" class="option">Bonbons</mat-chip-option>
+  </mat-chip-listbox>
+</div>

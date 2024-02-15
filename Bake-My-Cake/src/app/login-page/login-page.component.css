@@ -1,0 +1,115 @@
+#image-div {
+  display: inline-block;
+}
+
+.icons {
+  width: 3.5rem;
+}
+#navbar-header {
+  background-image: url("../../../../Bake-My-Cake/src/assets/images/BackgroundBody3.jpg");
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid black;
+}
+
+span {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 1rem;
+}
+sub {
+  font-size: 1.5rem;
+  font-family: Satisfy;
+}
+
+#right-icons {
+  display: flex;
+  font-family: Satisfy;
+  margin-right: 5rem;
+}
+
+.right-icon:hover mat-icon,
+.right-icon:hover span span {
+  color: rgb(0, 123, 255);
+}
+
+#navbar-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+}
+#header-title {
+  font-family: Agbalumo;
+}
+
+.icon-span {
+  font-size: 1.1rem;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  position: relative;
+  top: -5px;
+  left: -6px;
+}
+
+.form-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 3px solid black;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  background-color: white;
+}
+
+h2 {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+button {
+  width: 100%;
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+p {
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+#container {
+  background-image: url("../../../../Bake-My-Cake/src/assets/images/backgroundBody7.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+}

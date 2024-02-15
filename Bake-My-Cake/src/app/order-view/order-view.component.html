@@ -1,0 +1,251 @@
+<div id="container">
+  <div id="navbar-header">
+    <div id="image-div">
+      <img src="../../../assets/images/CakeLogo.png" class="icons" />
+    </div>
+    <div id="navbar-div">
+      <div>
+        <span id="header-title"
+          ><h1>Bake My Cake <sub>Yummycious!</sub></h1></span
+        >
+      </div>
+
+      <div id="right-icons">
+        <div class="right-icon">
+          <span (click)="navigateToHome()"
+            ><button type="button" mat-icon-button>
+              <mat-icon>home</mat-icon></button
+            ><span class="icon-span">Home</span></span
+          >
+        </div>
+        <div class="right-icon">
+          <span
+            ><button type="button" mat-icon-button (click)="navigateToLogin()">
+              <mat-icon>account_circle</mat-icon></button
+            ><span class="icon-span">Login</span></span
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="order-view-body">
+    <div class="card">
+      <div id="item-image-div">
+        <img
+          src="../../../assets/images/{{ item.itemName }}.jpg"
+          width="560rem"
+          height="100%"
+        />
+      </div>
+
+      <div *ngIf="clickStatus" id="item-details-div">
+        <h2>{{ item.itemName }}</h2>
+        <p>
+          <span
+            style="
+              background-color: rgb(141, 255, 80);
+              color: rgb(0, 0, 0);
+              padding: 3px;
+              border: 1px solid black;
+            "
+            ><b>5</b>⭐</span
+          >
+          Rating
+        </p>
+        <h1>₹ {{ item.price }}</h1>
+        <span style="font-family: Arial, Helvetica, sans-serif">
+          per {{ item.unit }}</span
+        >
+        <p><mat-chip id="chip">Available in India</mat-chip></p>
+        <p id="description">
+          Dive into a dreamy world of indulgence with our product '{{
+            item.itemName
+          }}'.Experience the sheer pleasure of a culinary masterpiece that
+          captivates your senses, creating an irresistible allure that lingers
+          long after the last bite.
+        </p>
+        <p
+          style="
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+              'Lucida Sans', Arial, sans-serif;
+          "
+        >
+          Unit : {{ item.unit }}
+        </p>
+        <div style="display: inline-block">
+          <button type="button" mat-fab color="primary" (click)="add()">
+            <mat-icon>add</mat-icon>
+          </button>
+          <div id="quantity-div" style="display: inline-block">
+            <b>{{ quantity }}</b>
+          </div>
+          <button type="button" (click)="subtract()" mat-fab color="primary">
+            <mat-icon>remove</mat-icon>
+          </button>
+        </div>
+        <p>Total amount : ₹{{ amount }}</p>
+        <button
+          type="button"
+          mat-raised-button
+          color="warn"
+          (click)="onSubmit()"
+        >
+          Order Now
+        </button>
+      </div>
+
+      <div *ngIf="!clickStatus" id="customer-details-div">
+        <form #feedbackForm="ngForm" (ngSubmit)="onSubmitForm()">
+          <div class="flex-div">
+            <div>
+              <h6>When do you want the delivery?</h6>
+              <mat-form-field appearance="outline" id="mat-date">
+                <mat-label>Choose a date</mat-label>
+                <input
+                  matInput
+                  [matDatepicker]="picker"
+                  [min]="minDate"
+                  [(ngModel)]="customerData.deliveryDate"
+                  #deliveryDate="ngModel"
+                  name="deliveryDate"
+                  required
+                />
+                <mat-hint><small>MM/DD/YYYY</small></mat-hint>
+                <mat-error *ngIf="deliveryDate.errors?.['required']"
+                  >Date is required!</mat-error
+                >
+                <mat-datepicker-toggle matIconSuffix [for]="picker">
+                  <mat-icon matDatepickerToggleIcon
+                    >keyboard_arrow_down</mat-icon
+                  >
+                </mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+            </div>
+            <div>
+              <h6>Enter Customer Name</h6>
+              <mat-form-field appearance="outline">
+                <mat-label>Name</mat-label>
+                <input
+                  type="text"
+                  matInput
+                  required
+                  #customerName="ngModel"
+                  [(ngModel)]="customerData.customerName"
+                  name="customerName"
+                />
+                <mat-error *ngIf="customerName.errors?.['required']"
+                  >Customer Name is required!</mat-error
+                >
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="flex-div">
+            <div>
+              <h6>Enter Customer Email</h6>
+              <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input
+                  type="email"
+                  matInput
+                  required
+                  #customerEmail="ngModel"
+                  [(ngModel)]="customerData.customerEmail"
+                  name="customerEmail"
+                  pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+                />
+                <mat-error *ngIf="customerEmail.errors?.['required']"
+                  >Email ID is required!</mat-error
+                >
+                <mat-error *ngIf="customerEmail.errors?.['pattern']"
+                  >Enter a Valid Email ID!</mat-error
+                >
+              </mat-form-field>
+            </div>
+            <div>
+              <h6>Enter Phone Number</h6>
+              <mat-form-field appearance="outline">
+                <mat-label>Phone</mat-label>
+                <input
+                  type="tel"
+                  matInput
+                  required
+                  #customerPhoneNumber="ngModel"
+                  [(ngModel)]="customerData.customerPhoneNumber"
+                  name="customerPhoneNumber"
+                  pattern="[0-9]{10}"
+                />
+                <mat-error *ngIf="customerPhoneNumber.errors?.['required']"
+                  >Phone Number is required!</mat-error
+                >
+                <mat-error *ngIf="customerPhoneNumber.errors?.['pattern']"
+                  >10 digits required</mat-error
+                >
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="flex-div">
+            <div>
+              <h6>Enter Address</h6>
+              <mat-form-field appearance="outline">
+                <mat-label>Address</mat-label>
+                <input
+                  type="text"
+                  matInput
+                  required
+                  #customerAddress="ngModel"
+                  [(ngModel)]="customerData.customerAddress"
+                  name="customerAddress"
+                />
+                <mat-error *ngIf="customerAddress.errors?.['required']"
+                  >Address is required!</mat-error
+                >
+              </mat-form-field>
+            </div>
+            <div>
+              <h6>Enter PIN Code</h6>
+              <mat-form-field appearance="outline">
+                <mat-label>PIN</mat-label>
+                <input
+                  type="number"
+                  matInput
+                  required
+                  #pinCode="ngModel"
+                  [(ngModel)]="customerData.pinCode"
+                  name="pinCode"
+                  pattern="[0-9]{4,}"
+                />
+                <mat-error *ngIf="pinCode.errors?.['required']"
+                  >PIN code is required!</mat-error
+                >
+                <mat-error *ngIf="pinCode.errors?.['pattern']"
+                  >PIN code must contain atleast 4 digits</mat-error
+                >
+              </mat-form-field>
+            </div>
+          </div>
+          <div style="width: 100%; text-align: center">
+            <button
+              style="margin-right: 20px"
+              type="reset"
+              color="warn"
+              mat-raised-button
+              (click)="feedbackForm.resetForm()"
+            >
+              Reset
+            </button>
+            <button
+              type="submit"
+              [disabled]="feedbackForm.invalid"
+              color="warn"
+              mat-raised-button
+            >
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,94 @@
+<app-header></app-header>
+
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport
+    [attr.role]="'navigation'"
+    [mode]="'side'"
+    [opened]="false"
+  >
+    <mat-toolbar id="navbar-sidebar">Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item href="#" class="nav-items"
+        ><button type="button" mat-icon-button>
+          <mat-icon>home</mat-icon><span> Home</span>
+        </button>
+      </a>
+      <a mat-list-item href="#" class="nav-items"
+        ><button type="button" mat-icon-button>
+          <mat-icon>settings</mat-icon><span> Settings</span>
+        </button></a
+      >
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar id="navbar-header">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+      >
+        <mat-icon aria-label="Side nav toggle icon" id="navbar-menu-button"
+          >menu</mat-icon
+        >
+      </button>
+      <div><img src="../../../assets/images/CakeLogo.png" class="icons" /></div>
+      <div id="navbar-div">
+        <div>
+          <span id="header-title"
+            ><h1>Bake My Cake<sub>Yummycious!</sub></h1></span
+          >
+        </div>
+        <div id="search-div">
+          <mat-form-field appearance="fill" id="search-form-field"
+            ><input
+              matInput
+              type="text"
+              placeholder="Search"
+              id="search-box"
+              [(ngModel)]="searchText" /></mat-form-field
+          ><button
+            type="button"
+            mat-raised-button
+            color="warn"
+            id="search-button"
+            (click)="search()"
+          >
+            <mat-icon>search</mat-icon>
+          </button>
+        </div>
+        <div id="right-icons">
+          <div class="right-icon">
+            <span (click)="navigateToHome()"
+              ><button type="button" mat-icon-button>
+                <mat-icon>home</mat-icon></button
+              ><span class="icon-span">Home</span></span
+            >
+          </div>
+          <div class="right-icon">
+            <span
+              ><button
+                type="button"
+                mat-icon-button
+                (click)="navigateToLogin()"
+              >
+                <mat-icon>account_circle</mat-icon></button
+              ><span class="icon-span">Admin</span></span
+            >
+          </div>
+        </div>
+      </div>
+    </mat-toolbar>
+    <app-category
+      *ngIf="bakeItems?.length !== 0"
+      (selectionPass1)="onSelectionPass1($event)"
+    ></app-category>
+    <app-landing-view
+      *ngIf="bakeItems?.length !== 0"
+      [bakeItems]="bakeItems"
+    ></app-landing-view>
+  </mat-sidenav-content>
+</mat-sidenav-container>

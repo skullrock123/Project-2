@@ -1,0 +1,53 @@
+<div id="container">
+  <div id="navbar-header">
+    <div id="image-div">
+      <img src="../../../assets/images/CakeLogo.png" class="icons" />
+    </div>
+    <div id="navbar-div">
+      <div>
+        <span id="header-title"
+          ><h1>Bake My Cake <sub>Yummycious!</sub></h1></span
+        >
+      </div>
+
+      <div id="right-icons">
+        <div class="right-icon">
+          <span (click)="navigateToHome()"
+            ><button type="button" mat-icon-button>
+              <mat-icon>home</mat-icon></button
+            ><span class="icon-span">Home</span></span
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-container">
+    <h2>If you are an administrator, enter your Login Code</h2>
+
+    <form #AdminForm="ngForm" (ngSubmit)="submitPassword(AdminForm)">
+      <mat-form-field>
+        <mat-label>Enter your password</mat-label>
+        <input
+          matInput
+          [type]="hide ? 'password' : 'text'"
+          #password="ngModel"
+          [(ngModel)]="adminForm.password"
+          name="password"
+        />
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="hide = !hide"
+          [attr.aria-label]="'Hide password'"
+        >
+          <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+        </button>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit">Submit</button>
+    </form>
+
+    <p>If you are a Customer, <a routerLink="/home">click here</a></p>
+  </div>
+</div>

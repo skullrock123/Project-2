@@ -1,0 +1,130 @@
+.sidenav-container {
+  height: 100%;
+  background-image: url("../../../../Bake-My-Cake/src/assets/images/BackgroundBody.png");
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.sidenav {
+  width: 200px;
+  background-color: rgb(127, 189, 255);
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+#navbar-header {
+  background-image: url("../../../../Bake-My-Cake/src/assets/images/BackgroundBody3.jpg");
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: fixed;
+  z-index: 1;
+  border-bottom: 1px solid black;
+}
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+#navbar-menu-button {
+  font-size: 1.5rem;
+}
+#navbar-sidebar {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: rgb(43, 6, 71);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+span {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 1.8rem;
+}
+sub {
+  font-size: 1.5rem;
+  font-family: Satisfy;
+}
+.nav-items span {
+  font-size: 1.2rem;
+  position: absolute;
+  top: 0.8rem;
+  margin-left: 1rem;
+}
+#right-icons {
+  display: flex;
+  font-family: Satisfy;
+}
+
+.right-icon:hover mat-icon,
+.right-icon:hover span span {
+  color: rgb(0, 123, 255);
+}
+
+#navbar-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100rem;
+}
+#header-title {
+  font-family: Agbalumo;
+}
+
+.icon-span {
+  font-size: 1.1rem;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  position: relative;
+  top: -5px;
+  left: -6px;
+}
+
+.icons {
+  width: 3.2rem;
+}
+#search-form-field {
+  width: 20rem;
+  margin-top: 0.5rem;
+}
+#search-div {
+  display: flex;
+  align-items: center;
+  margin-top: 1.1rem;
+  position: absolute;
+  left: 40%;
+}
+
+mat-form-field {
+  height: 3.5rem;
+}
+#search-box {
+  position: absolute;
+  top: 5px;
+  
+}
+#search-button {
+  margin-top: -1.1rem;
+  margin-left: -0.1rem;
+  padding-top: 0.3rem;
+  height: 2rem;
+}
+#search-button mat-icon {
+  position: absolute;
+  right: 1rem;
+  font-size: 1.2rem;
+}
+
+app-category {
+  position: absolute;
+  top: 45px;
+  height: 50px;
+  width: 100%;
+}
+
+app-landing-view {
+}

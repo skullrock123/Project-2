@@ -1,0 +1,65 @@
+.Card--content {
+  text-align: center;
+  padding: 12px;
+  margin: 1.2rem;
+  margin-bottom: 5px;
+  border-radius: 20px;
+  background-image: url("../../../../Bake-My-Cake/src/assets/images/BackgroundBody4.png");
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transition: transform 0.3s ease;
+}
+.Card--content:hover {
+  transform: scale(1.05);
+}
+#card-image {
+  border: 2px solid black;
+}
+#item-image-container {
+  position: relative;
+}
+#card-image-logo {
+  width: 100px;
+  position: absolute;
+  top: -20px;
+  left: -10px;
+  z-index: 1;
+}
+#card-details {
+  background-color: rgb(215, 191, 191);
+}
+
+#card-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+#order-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 35px;
+}
+#order-button-div {
+  display: flex;
+  justify-content: center;
+}
+
+mat-card:hover {
+  box-shadow: 0px 0px 10px rgb(236, 236, 236);
+}
+p {
+  font-family: monospace;
+  font-size: 1.1rem;
+  color: brown;
+}
+span {
+  display: flex;
+  align-items: center;
+}
+h3 {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}

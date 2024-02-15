@@ -1,0 +1,43 @@
+{
+  "Customer-Details": [
+    {
+      "deliveryDate": "2023-11-20T18:30:00.000Z",
+      "customerName": "Abhinav Anil",
+      "customerEmail": "abhinavanil2000@gmail.com",
+      "customerPhoneNumber": "7012291147",
+      "customerAddress": "Revathy, Karippai Rd, N.Kalamassery",
+      "pinCode": 683104,
+      "quantity": 1,
+      "totalAmount": 350,
+      "orderedItem": "Classic Cheesecake",
+      "unit": "Kg",
+      "id": 1
+    },
+    {
+      "deliveryDate": "2023-11-21T18:30:00.000Z",
+      "customerName": "Vinay",
+      "customerEmail": "vinay123@gmail.com",
+      "customerPhoneNumber": "7012291147",
+      "customerAddress": "Revathy, Karippai Rd, N.Kalamassery",
+      "pinCode": 683104,
+      "quantity": 3,
+      "totalAmount": 750,
+      "orderedItem": "Easter Cupcakes",
+      "unit": "pack(10 pieces)",
+      "id": 2
+    },
+    {
+      "deliveryDate": "2023-11-20T18:30:00.000Z",
+      "customerName": "Abhi",
+      "customerEmail": "abhinavanil2000@gmail.com",
+      "customerPhoneNumber": "7012291147",
+      "customerAddress": "Revathy, Karippai Rd, N.Kalamassery",
+      "pinCode": 683104,
+      "quantity": 3.5,
+      "totalAmount": 1575,
+      "orderedItem": "Chocolate Blueberries Cake",
+      "unit": "Kg",
+      "id": 3
+    }
+  ]
+}

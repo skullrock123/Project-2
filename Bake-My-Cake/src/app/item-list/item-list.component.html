@@ -1,0 +1,50 @@
+<a>
+  <mat-card
+    mat-ripple
+    [matRippleCentered]="true"
+    class="Card--content"
+    (mouseenter)="hoverStatus = true"
+    (mouseleave)="hoverStatus = false"
+  >
+    <div id="item-image-container">
+      <img
+        id="card-image"
+        src="../../../assets/images/{{ item.itemName }}.jpg"
+        alt=""
+        width="400rem"
+        height="250px"
+      /><img id="card-image-logo" src="../../../assets/images/itemLogo3.png" />
+    </div>
+    <mat-card-content id="card-details">
+      <h3>{{ item.itemName }}</h3>
+      <div class="Card-details">
+        <p>₹ {{ item.price }} per {{ item.unit }}</p>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <div id="card-buttons">
+        <button mat-icon-button id="like-button" (click)="buttonClick()">
+          <mat-icon [style.color]="colour">favorite</mat-icon>
+        </button>
+        <div id="order-button-div" *ngIf="hoverStatus">
+          <button
+            mat-raised-button
+            color="accent"
+            id="order-button"
+            class="btn btn-primary"
+            (click)="navigateToOrderView(item)"
+          >
+            Order Now<mat-icon>shopping_cart</mat-icon>
+          </button>
+        </div>
+        <span
+          ><img src="../../../assets/images/rating.jpg" /><img
+            src="../../../assets/images/rating.jpg" /><img
+            src="../../../assets/images/rating.jpg" /><img
+            src="../../../assets/images/rating.jpg" /><img
+            src="../../../assets/images/rating.jpg"
+        /></span>
+      </div>
+    </mat-card-actions>
+  </mat-card>
+</a>

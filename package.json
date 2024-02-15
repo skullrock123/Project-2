@@ -1,0 +1,18 @@
+{
+  "name": "fe-c6-bake-my-cake-project",
+  "version": "1.0.0",
+  "description": "Cakes, cookies and brownies are all time favorites of young and old. No celebration is complete without these delicacies. The cake shops have started offering options to the customers to bake cakes as per their needs.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:port1":"json-server --w -p 3000 Food-data/FoodItems.json",
+    "start:port2": "json-server --w -p 3001 Customer-Data/Customer-Details.json",
+    "start":"npm-run-all -p start:port1 start:port2"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+}

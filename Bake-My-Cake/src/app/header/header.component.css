@@ -1,0 +1,20 @@
+#header-top {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin: 0px;
+  padding-right: 2rem;
+  background-color: rgb(127, 165, 255);
+}
+span {
+  display: inline-block;
+}
+
+.icons {
+  margin-left: 2rem;
+  margin-right: 0.5rem;
+}
+
+#header-bottom {
+  margin-left: 1.1rem;
+}

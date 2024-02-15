@@ -1,0 +1,37 @@
+<div id="navbar-header">
+  <div id="image-div">
+    <img src="../../../assets/images/CakeLogo.png" class="icons" />
+  </div>
+  <div id="navbar-div">
+    <div>
+      <span id="header-title"
+        ><h1>Bake My Cake <sub>Yummycious!</sub></h1></span
+      >
+    </div>
+
+    <div id="right-icons">   
+      <div class="right-icon">
+        <span
+          ><button type="button" mat-icon-button (click)="toLogout()">
+            <mat-icon>exit_to_app</mat-icon></button
+          ><span class="icon-span">Logout</span></span
+        >
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="customer-table">
+  <table mat-table [dataSource]="customers" class="mat-elevation-z8">
+    <ng-container
+      matColumnDef="{{ column }}"
+      *ngFor="let column of displayedColumns"
+    >
+      <th mat-header-cell *matHeaderCellDef>{{ column | titlecase }}</th>
+      <td mat-cell *matCellDef="let customer">{{ customer[column] }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</div>

@@ -1,1 +1,3 @@
-After cloning , give commands:- npm i, npm start, ng serve -o
+BAKE MY CAKE
+It is an E-Commerce application that allows client to order  bakery items which includes cakes, muffins, cookies and other items.
+
